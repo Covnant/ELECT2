@@ -29,9 +29,9 @@
 <body>
 <div class="d-flex align-items-center justify-content-center vh-100" style="flex-direction: column;">
     <form method="POST">
-        <label>Enter a Date:</label>
+
         <div class="mb-3">
-            <label for="input_date" class="form-label">Enter A Square's Length or Circle's Radius: </label>
+            <label for="input_date" class="form-label">Enter A Date: </label>
             <input id="input_date" class="form-control" type="date" name="date" required>
         </div>
         <div style="text-align: center">
@@ -40,7 +40,7 @@
     </form>
     <div style="text-align: center">
         </br>
-       <?php echo $newDate; ?>
+       <?php echo $newDate;?>
     </div>
 </div>
 
