@@ -19,7 +19,7 @@
 
     class Employee extends salary{
         public function calculate13Pay(){
-            echo "The 13 Month Pay: ". ($this->salary * $this->MonthOfStay)/12 ."</br>";
+            echo "The 13-Month Pay: ". ($this->salary * $this->MonthOfStay)/12 ."</br>";
 
         }
         public function calculateHrPay(){
