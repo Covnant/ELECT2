@@ -48,7 +48,7 @@
     <body>
     <div class="d-flex align-items-center justify-content-center vh-100" style="flex-direction: column;">
         <form method="POST">
-            <label>Choose a Shape:</label>
+            <label>Choose the type of Product:</label>
             <select class="form-select" name="selectedOption">
 
                     <option value="1">Book</option>
