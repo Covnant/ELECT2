@@ -1,7 +1,8 @@
 <?php
 
-    $product = null;
+
     require_once ("prod.php");
+    $product = null;
     if(isset($_POST['Submit'])){
         if(isset($_POST['selectedOption']) && isset($_POST['Director&Author'])
             && isset($_POST['Rating&Genre'])
