@@ -58,6 +58,7 @@ if(isset($_POST['Submit']))
             </div>
         </form>
         <div style="text-align: center">
+            <?php echo $person->displayName(); ?>
             <?php echo $person->calculate13Pay(); ?>
             <?php echo $person->calculateHrPay(); ?>
 
