@@ -5,7 +5,7 @@
 
         public static function getFormat($input){
             $orgDate = STRTOTIME($input);
-            return date("mm/dd/yyyy", $orgDate);
+            return date("m/d/Y", $orgDate);
         }
     };
 
