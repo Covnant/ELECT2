@@ -3,6 +3,7 @@
 
     require_once ("prod.php");
     $product = null;
+    $Info = null;
     if(isset($_POST['Submit'])){
         if(isset($_POST['selectedOption']) && isset($_POST['Director&Author'])
             && isset($_POST['Rating&Genre'])
@@ -24,6 +25,7 @@
                 {
                     $product = new Movie($field1,$field2,$field3,$field4);
                 }
+                $Info = $product->Display();
 
 
 
@@ -71,7 +73,7 @@
             </div>
         </form>
         <div style="text-align: center">
-            <?php echo $product->Display(); ?>
+            <?php echo $Info; ?>
         </div>
     </div>
 

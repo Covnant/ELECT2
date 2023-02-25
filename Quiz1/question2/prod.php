@@ -30,10 +30,10 @@ class Movie extends product{
     }
     public function Display(){
 
-        echo "Product Name: ". $this->ProductName . "</br>";
-        echo "Price: ". $this->Price. "</br>";
-        echo  "Director: ". $this->Director. "</br>";
-        echo  "Rating: ".$this-> Rating."</br>";
+        return "Product Name: ". $this->ProductName . "</br>".
+         "Price: ". $this->Price. "</br>" .
+          "Director: ". $this->Director. "</br>".
+          "Rating: ".$this-> Rating."</br>";
     }
 
 
@@ -56,10 +56,10 @@ class Book extends product{
 
     public function Display(){
 
-        echo "Product Name: ". $this->ProductName."</br>";
-        echo "Price: ". $this->Price."</br>";
-        echo  "Author: ". $this->Author."</br>";
-        echo  "Genre: ". $this->Genre."</br>";
+        return "Product Name: ". $this->ProductName."</br>".
+         "Price: ". $this->Price."</br>".
+          "Author: ". $this->Author."</br>".
+          "Genre: ". $this->Genre."</br>";
     }
 
 

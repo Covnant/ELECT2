@@ -1,6 +1,9 @@
 <?php
 require_once ("salary.php");
 $person =null;
+$Identity =null;
+$MonthPay =null;
+$HrPay =null;
 
 if(isset($_POST['Submit']))
     if(isset ($_POST['Name']) && isset ($_POST['Salary']) && isset ($_POST['MonthStay']) && isset ($_POST['class'])){
@@ -14,6 +17,9 @@ if(isset($_POST['Submit']))
         else{
             $person = new Manager($name,$salary,$MonthStay);
         }
+        $Identity = $person->displayName();
+        $MonthPay= $person->calculate13Pay();
+        $HrPay = $person->calculateHrPay();
     }
 
 ?>
@@ -58,9 +64,9 @@ if(isset($_POST['Submit']))
             </div>
         </form>
         <div style="text-align: center">
-            <?php echo $person->displayName(); ?>
-            <?php echo $person->calculate13Pay(); ?>
-            <?php echo $person->calculateHrPay(); ?>
+            <?php echo $Identity; ?>
+            <?php echo $MonthPay; ?>
+            <?php echo $HrPay; ?>
 
         </div>
     </div>
