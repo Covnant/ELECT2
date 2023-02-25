@@ -2,6 +2,15 @@
 
 
     abstract class salary{
+
+        abstract function calculate13Pay();
+        abstract function calculateHrPay();
+
+        abstract function displayName();
+    }
+
+    class Employee extends salary{
+
         public $name;
         public $salary;
         public $MonthOfStay;
@@ -12,14 +21,6 @@
             $this->MonthOfStay=$MonthOfStay;
 
         }
-
-        abstract function calculate13Pay();
-        abstract function calculateHrPay();
-
-        abstract function displayName();
-    }
-
-    class Employee extends salary{
         public function displayName(){
             return "Name: ". $this->name. "</br>";
         }
@@ -32,7 +33,7 @@
         }
     }
 
-    class Manager extends salary{
+    class Manager extends employee{
 
         public function displayName(){
            return "Name: ". $this->name. "</br>";
