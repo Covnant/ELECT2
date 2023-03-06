@@ -12,27 +12,30 @@ abstract class product{
     }
 
 
-     abstract function Display();
+     protected function Display(): string{
+        return "Product Name: ". $this->ProductName. "Price: ". $this->Price;
+
+     }
 
 }
 
 class Movie extends product{
 
-    public $Director;
-    public $Rating;
+    protected $Director;
+    protected $Rating;
     public function __construct($Director,$Rating,$ProductName,$Price){
+            parent::__construct($Price,$ProductName);
 
         $this->Director =$Director;
         $this->Rating =$Rating;
-        $this->ProductName=$ProductName;
-        $this->Price=$Price;
+
 
     }
-    public function Display(){
+    public function Display(): string{
 
-        return "Product Name: ". $this->ProductName . "</br>".
-         "Price: ". $this->Price. "</br>" .
-          "Director: ". $this->Director. "</br>".
+        return"Product Name: ". $this->ProductName."</br>".
+            "Price: ". $this->Price."</br>".
+            "Director: ". $this->Director. "</br>".
           "Rating: ".$this-> Rating."</br>";
     }
 
@@ -42,19 +45,18 @@ class Movie extends product{
 
 class Book extends product{
 
-    public $Author;
-    public $Genre;
+    protected  $Author;
+    protected $Genre;
 
     public function __construct($Author,$Genre,$ProductName,$Price){
+        parent ::__construct($Price,$ProductName);
         $this->Author =$Author;
         $this->Genre =$Genre;
-        $this->ProductName=$ProductName;
-        $this->Price=$Price;
 
 
     }
 
-    public function Display(){
+    public function Display(): string{
 
         return "Product Name: ". $this->ProductName."</br>".
          "Price: ". $this->Price."</br>".
