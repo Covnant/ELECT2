@@ -5,9 +5,9 @@ CREATE TABLE bookstoredb.tbl_authors (
   Author_id INT NOT NULL AUTO_INCREMENT,
   Author_Name VARCHAR(45) NOT NULL,
   Biography VARCHAR(45) NULL,
-
+ 
   PRIMARY KEY (Author_id)
-
+  
 );
 
 -- table for the list of publishers
@@ -16,7 +16,7 @@ CREATE TABLE bookstoredb.tbl_publishers (
   Publisher_Name VARCHAR(45) NOT NULL,
   Address VARCHAR(45) NOT NULL,
   PRIMARY KEY (Publisher_id)
-
+ 
 );
 -- table for books with reference to the punlishers and authors of each book
 CREATE TABLE bookstoredb.tbl_books(
@@ -54,7 +54,7 @@ CREATE TABLE bookstoredb.tbl_customers (
   PRIMARY KEY (Customer_id)
 );
 
--- table for list of orders done by(reference to) customers
+-- table for list of orders done by(reference to) customers 
 CREATE TABLE bookstoredb.tbl_orders (
   Order_id INT NOT NULL AUTO_INCREMENT,
   _Date DATE NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE bookstoredb.tbl_shipments (
   Shipping_Date DATE NOT NULL,
   Delivery_Date DATE NOT NULL,
   Order_id INT NOT NULL,
-
+  
   PRIMARY KEY (Tracking_Number),
   INDEX fk_Order_id_idx (Order_id ASC) VISIBLE,
   CONSTRAINT fk_Order_id
