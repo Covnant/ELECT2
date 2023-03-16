@@ -110,3 +110,5 @@ CREATE TABLE bookstoredb.tbl_shipments (
     ON DELETE CASCADE
     ON UPDATE RESTRICT
 );
+
+-- end
