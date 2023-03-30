@@ -1,5 +1,6 @@
 <?php
 require_once "products.php";
+require_once "username.php";
 
 $total = null;
 $user = null;
@@ -11,7 +12,7 @@ $option = array(
     new products('Chicken','400')
 );
 if(isset ($_POST['Submit']) && isset($_POST['prod']) && isset($_POST['user']) && isset($_POST['spend'])){
-
+$user = new user($_POST['user'], $_POST['spend']);
 foreach($_POST['prod'] as $Checked => $value):
     $total += $value;
 endforeach;
@@ -54,10 +55,19 @@ DOCTYPE html>
     </form>
     <div style="text-align: center">
         <?php
-        if($total > ){
-        echo ""
+        if($total > $user->getLimit()){
+            echo "Total amount have exceeded the limit";
+            echo "Total Price: ". $total;
+            echo "Spending Limit: ". $user->getLimit();
+        }
+        else{
+            echo "Total amount: ". $total;
+            echo "Spend Limit: ". $user->getLimit();
+            echo "Remaining Balance: ". $total - $user->getLimit();
+
         }
         }
+
 
         ?>
 
@@ -67,3 +77,4 @@ DOCTYPE html>
 </body>
 
 </html>
+

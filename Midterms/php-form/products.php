@@ -15,13 +15,7 @@ class Products{
         return $this->price;
     }
 }
-class user{
-    protected $username;
 
-    public function getUsername(){
-        return $this->username;
-    }
-}
 
 class calculate extends products{
 
