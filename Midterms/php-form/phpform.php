@@ -46,7 +46,7 @@ if(isset ($_POST['Submit']) && isset($_POST['prod']) && isset($_POST['user']) &&
                 <input class="form-check-input" type="checkbox" value="<?= $product->getPrice() ?>" id="opt" name="prod[]">
                 <label class="form-check-label" for="opt">
                     <?= $product->getName(). "," ?>
-                    <?= $product->getPrice() ?>
+                    <?= $product->getPrice(). "," ?>
                     <?= $product->getWeight() ?>
                 </label>
             </div>
