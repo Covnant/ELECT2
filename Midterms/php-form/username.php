@@ -4,7 +4,7 @@ class user{
     protected $limit;
     public function __construct($username,$limit){
         $this->username = $username;
-        $this->limit - $limit
+        $this->limit = $limit;
 }
     public function getUsername(){
         return $this->username;
