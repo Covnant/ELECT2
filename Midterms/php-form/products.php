@@ -2,10 +2,11 @@
 class Products{
     protected $name;
     protected $price;
-
-    public function __construct($name,$price){
+    protected $weight;
+    public function __construct($name,$price,$weight){
         $this->name = $name;
         $this->price = $price;
+        $this->weight = $weight;
     }
 
     public function getName(){
@@ -13,6 +14,9 @@ class Products{
     }
     public function getPrice(){
         return $this->price;
+    }
+    public function getWeight(){
+        return $this->weight;
     }
 }
 

@@ -5,10 +5,10 @@ require_once "username.php";
 $total = null;
 $user = null;
 $option = array(
-    new products('Apple','100'),
-    new products('Avocado','200'),
-    new products('Beef','300'),
-    new products('Chicken','400')
+    new products('Apple','100',3.00),
+    new products('Avocado','200',4.00),
+    new products('Beef','300',5.00),
+    new products('Chicken','400',6.00)
 );
 if(isset ($_POST['Submit']) && isset($_POST['prod']) && isset($_POST['user']) && isset($_POST['spend']))
 {
@@ -47,6 +47,7 @@ if(isset ($_POST['Submit']) && isset($_POST['prod']) && isset($_POST['user']) &&
                 <label class="form-check-label" for="opt">
                     <?= $product->getName(). "," ?>
                     <?= $product->getPrice() ?>
+                    <?= $product->getWeight() ?>
                 </label>
             </div>
         <?php endforeach; ?>
