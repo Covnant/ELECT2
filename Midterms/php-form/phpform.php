@@ -40,6 +40,7 @@ if(isset ($_POST['Submit']) && isset($_POST['prod']) && isset($_POST['user']) &&
             <input id="input_limit" class="form-control" type="number" name="spend" required> <br>
         </div>
 
+
         <?php foreach($option as $index => $product): ?>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="<?= $product->getPrice() ?>" id="opt" name="prod[]">
@@ -51,23 +52,24 @@ if(isset ($_POST['Submit']) && isset($_POST['prod']) && isset($_POST['user']) &&
         <?php endforeach; ?>
 
         <div style="text-align: center">
-            <input name="Submit" value="Submit" type="submit" class="btn btn-primary"/>
+            <br> <input name="Submit" value="Submit" type="submit" class="btn btn-primary"/>
         </div>
     </form>
     <div style="text-align: center">
 
         <?php
-            if($total > $user->getLimit()){
-                echo "Total amount have exceeded the limit"."</br>";
-                echo "Total Price: ". $total."</br>";
-                echo "Spending Limit: ". $user->getLimit()."</br>";
-            }
-            else{
-                echo "Total amount: ". $total . "</br>";
-                echo "Spend Limit: ". $user->getLimit()."</br>";
-                echo "Remaining Balance: ".  $user->getLimit() - $total."</br>";
+        if($user != null) {
+            if ($total > $user->getLimit()) {
+                echo "Total amount have exceeded the limit" . "</br>";
+                echo "Total Price: " . $total . "</br>";
+                echo "Spending Limit: " . $user->getLimit() . "</br>";
+            } else {
+                echo "Total amount: " . $total . "</br>";
+                echo "Spend Limit: " . $user->getLimit() . "</br>";
+                echo "Remaining Balance: " . $user->getLimit() - $total . "</br>";
 
             }
+        }
         ?>
     </div>
 </div>
